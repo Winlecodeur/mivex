@@ -1,0 +1,98 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}">
+    <title>admin</title>
+</head>
+<body>
+    <div class="toggle"></div>
+    <section class="infos">
+        <h1><img src="{% static 'img/icons8-administrateur-94.png' %}">Administration</h1>
+        <li><a href=""><img src="{% static 'img/icons8-disposition-du-tableau-de-bord-24.png' %}">dashboard</a></li>
+        <li><a href=""><img src="{% static 'img/icons8-rappels-de-rendez-vous-24.png' %}">inscription_detail</a></li>
+        <li><a href=""><img src="{% static 'img/icons8-porte-voix-50.png' %}">style_detail</a></li>
+        <li><a href=""><img src="{% static 'img/icons8-flèche-haut-50.png' %}">abonnés</a></li>
+        <li><a href=""><img src="{% static 'img/20173.png' %}">envoyer un newsletter</a></li>
+        <li id="logout"><a href=""><img src="{% static 'img/icons8-sortie-50 (1).png' %}">logout</a></li>
+    </section>
+    <section class="nav-bar">
+        <div class="welcome">
+            <span>bienvenue, {{user.username}}   {{user.email}}</span>
+        </div>
+        <div class="home">
+            <a href="{% url 'home' %}">visiter le site</a>
+        </div>
+    </section>
+    <aside>
+        <div class="aside-infos">
+            <div class="aside-div">
+                <div class="aside-div-div">
+                    <div class="img">
+                        <img src="{% static 'img/20173.png' %}">
+                    </div>
+                    <div class="div-bio">
+                 <a href="">       <h4>NEWSLETTER</h4>
+                    <span>consulter la liste de personnes qui se sont abonnés à votre newsletter</span>
+               </a>
+                    </div>
+                </div>
+                <div class="aside-div-div">
+                    <div class="img">
+                        <img src="{% static 'img/icons8-administrateur-94.png' %}">
+                    </div>
+                    <div class="div-bio">
+                  <a href="">
+                    <h4>INSCRIPTION</h4>
+                    <span>consulter la liste des personnes qui se sont inscrite à votre événement</span>
+               
+                  </a>
+                    </div>
+                </div>
+                <div class="aside-div-div">
+                    <div class="img">
+                        <img src="{% static 'img/icons8-porte-voix-50.png' %}">
+                    </div>
+                    <div class="div-bio">
+                    <a href="{% url 'style' %}">
+                        <h4>STYLE</h4>
+                        <span>ajouter un style de musique, art ou tout autres choses que l'user peut choisir à l'inscription</span>
+                   
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="aside-news">
+                <div class="aside-news-infos">
+                    <h4>NEWSLETTER EMAIL</h4>
+                    <p> nom :  <a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.name}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                    <p> post_nom :  <a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.last_name}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                    <p> prenom :  <a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.first_name}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                    <p>  sexe  :<a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.sexe}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                  
+                </div>
+                <div class="aside-news-infos">
+                    <h4>INSCRIPTION <form method="get" class="search" action="{% url 'inscription_search' %}">
+                        <input name="q" value="{{query}}" placeholder="ex.enoch">
+                        <button type="submit"><img src="{% static 'img/icons8-chercher-50 (2).png' %}"></button>
+                    </form></h4>
+                    <p> stylee : <a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.style}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                  <p> date de naissance <a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.birth_date}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                  <p> ville de residence <a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.town_residence}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                  <p> numero de téléphone <a href="{% url 'inscription_detail' inscription.id %}" class="email">{{inscription.number}}</a>  <a href="{% url 'inscription_modif' inscription.id %}" class="modif"> <img src="{% static 'img/icons8-registration-24.png' %}"></a></p>
+                  
+                </div>
+            </div>
+        </div>
+    </aside>
+    <script>
+        var menu = document.querySelector('.infos')
+var small_menu = document.querySelector('.toggle')
+small_menu.onclick = function() {
+    small_menu.classList.toggle('active')
+    menu.classList.toggle('responsive')
+};
+    </script>
+</body>
+</html>

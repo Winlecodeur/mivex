@@ -1,0 +1,30 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inscription.css' %}">
+    <title>inscription</title>
+</head>
+<body style="    background-image: url('static/BackgroundEraser_20240816_135025459.png');
+background-repeat: no-repeat;
+background-size: 30em;">
+  <div class="medias">
+    <h1>S'INSCRIRE</h1>
+    <form method="post" action="{% url 'inscription' %}">
+        {% csrf_token %}
+        <div class="form">
+            <label for="">nom</label>{{form.name}}
+            <label for="">post_nom</label>{{form.last_name}}
+            <label for="">prenom</label>{{form.first_name}}
+            <label for="">style</label>{{form.style}}
+            <label for="">date de naissance</label>{{form.birth_date}}
+            <label for="">sexe</label>{{form.sexe}}
+            <label for="">ville de residence</label>{{form.town_residence}}
+            <label for="">numero de telephone</label>{{form.number}}
+        </div>
+        <button type="submit">envoyer</button>
+    </form>
+  </div>
+</body>
+</html>

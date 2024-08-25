@@ -1,0 +1,139 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  
+    <title>MIVEX</title>
+</head>
+<body>
+    <header>
+        <span class="title">mi<small class="header-name">vex</small>    </span>
+        <div class="toggle"></div>
+        <ul class="menu">
+            <li><a href="#accueil">accueil</a></li>
+            <li><a href="#infos">infos</a></li>
+            <li><a href="#propos">propos</a></li>
+            <li><a href="#footer">contatcs</a></li>
+        </ul>
+    </header>
+    <div class="btn"><a href="#accueil"><img src="{% static 'img/icons8-flèche-haut-50 (1).png' %}"></a></div>
+   <div class="accueil" id="accueil">
+    <div class="acc!ueil-img item " id="accueil2">
+        <img src="{% static 'img/BackgroundEraser_20240816_135908018.png' %}">
+    </div>
+    <div class="accueil-infos item">
+        <h1>BIENVENUE <br>CHEZ <span class="title"><small class="header-name">MIVEX</small>    </span></h1>
+        <p class="accueil-p"><span>Nous sommes un centre culturel qui accompagne, permet de promouvoir les jeunes et talents qui de nos jours ouevrent dans l'obscurité</span> <a href="{% url 'inscription' %}" class="accueil-p-a">s'inscrire</a></p>
+    </div>
+    <div class="accueil-img item">
+        <img src="{% static 'img/BackgroundEraser_20240816_135908018.png' %}" >
+    </div>
+   </div>
+  <div id="infos-h1">
+    <h1 class="infos-h1  item" >Tout savoir sur nous  </h1>
+  </div>
+   <div class="infos" id="infos">
+    <div class="infos-propos item">
+        <img src="{% static 'img/Screenshot_20240816-141817.jpg' %}">
+        <strong></strong>
+        <span>Nous sommes un centre culturel qui accompagne, permet de promouvoir les jeunes et talents qui de nos jours ouvrent dans l'obsvurité.</span>
+    </div>
+    <div class="infos-propos  item">
+        <img src="{% static 'img/Screenshot_20240816-141804.jpg' %}">
+        <span>Notre vision est d'améliorer votre visibilité par ce don donné du ciel;nous voulons le faire connaitre aux yeux de tous
+            en mettant des stratégies & opportunités de communication adaptées à vos objectifs et moyens
+        </span>
+    </div>
+    <div class="infos-propos item">
+        <img src="{% static 'img/Screenshot_20240816-141829.jpg' %}">
+        <span>1. L'ecoute <br>2.La créativité <br>3.L'esprit critique<br> 4.La transparence <br>5.L'éthique </span>
+    </div>
+    <div class="infos-propos item">
+        <img src="{% static 'img/Screenshot_20240816-141838.jpg' %}">
+        <span>Notre produit ou service étant de permettre à toutes générations de se rencontrer et de participer 
+            à la vie sociale de la communauté à travers des activités qui visent à répondre à des intérêts ou des besoins culturels
+        </span>
+    </div>
+    <div class="infos-propos item">
+        <img src="{% static 'img/Screenshot_20240816-141856.jpg' %}">
+        <span>Nous reflétons les valeurs, les croyances, les traditions et les pratiques de cohésions d'une nationale</span>
+    </div>
+    <div class="infos-propos item">
+        <img src="{% static 'img/Screenshot_20240816-141905_1.jpg' %}">
+        <span>Des spectacles, des concerts, des conférences, des expositions, des stages, des ateliers, des projets participatifs</span>
+    </div>
+   </div>
+
+ <div id="propos-h1">
+    <h1 class="propos-h1 item" id="propos-h1" >à propos  de MIVEX</h1>
+ </div>
+   <div class="propos" id="propos">
+    <div class="propos-infos item">
+        <div class="propos-img ">
+            <img src="{% static 'img/IMG-20240817-WA0010.jpg' %}">
+        </div>
+        <div class="propos-detail">
+            <h4> Notre equipe</h4>
+            <span>  consulter l'equipe qui consitue MIVEX, une equipe des professionnels qui jouent un rôle clé dans l'organisation </span>
+            <a href="{% url 'equipe' %}"> voir plus</a>
+        </div>
+    </div>
+    <div class="propos-infos item">
+        <div class="propos-img">
+            <img src="{% static 'img/IMG-20240817-WA0018.jpg' %}">
+        </div>
+        <div class="propos-detail ">
+            <h4>DECOUVERTE</h4>
+            <span> consulter les intervenants et artistes qui ont eu à participer à l'événement, decouvrer des nouvelles personnes  </span>
+            <a href="{% url 'decouverte' %}"> voir plus</a>
+        </div>
+    </div>
+    
+    <div class="propos-infos item">
+        <div class="propos-img">
+            <img src="{% static 'img/BackgroundEraser_20240816_135025459.png' %}">
+        </div>
+        <div class="propos-detail">
+            <h4>DESIGNS</h4>
+            <span> consulter nos designs qui ont permis cette realisation, logo, affiches et autres </span>
+           <a href="{% url 'affiche' %}">voir plus</a>
+        </div>
+    </div>
+   </div>
+   <div class="success" id="newsletter"> <div class="success-div">{% if messages %}  {% for message in messages %} {{message}} {% endfor %}{% endif %}</div></div>
+  <div class="form" id="form">
+   <div class="form-h1 item" >
+    <h1>NEWSLETTER</h1>
+   </div>
+  
+    <form method="post" action="{% url 'Subscriber_newsletter' %}" class="item">
+        {% csrf_token %}
+       <div class="form-div item">
+        <label> email </label> <input type="email" name="email"  placeholder="mettez un email valide" required>
+        
+       </div>
+        <button type="submit" class="item">s'abonner</button>
+       </form>
+  </div>
+   <footer class="footer" id="footer">
+    <div class="icone item">
+        <a href=""><img src="{% static 'img/icons8-facebook-nouveau-50.png' %}" alt=""></a>
+        <a href=""><img src="{% static 'img/icons8-whatsapp-50 (2).png' %}" alt=""></a>
+        <a href=""><img src="{% static 'img/icons8-subscribe-50.png' %}" alt=""></a>
+        <a href=""><img src="{% static 'img/icons8-instagram-50.png' %}" alt=""></a>
+        <a href=""><img src="{% static 'img/icons8-twitter-50.png' %}" alt=""></a>
+        <a ><img src="{% static 'img/BackgroundEraser_20240816_135025459.png' %}" alt="" id="logo"></a>
+    </div>
+
+    <div class="footer-a item">
+        <a >communautés <br><span> notre communautésur les réseaux est en développement, consulter notre page facebook, ecrivez nous sur whatsapp ou email  </span> </a>
+        <a >prendre un rendez-vous<br><span>nous sommes disponible 24h/24, ecrivez-nous sur whatsapp et vous recevrez une réponse dans un bref delai, l'equipe disponible réagira pour vous satisfaire, poser toutes questions.</span></a>
+        <a >voir notre page facebook<br><span>consulter notre page facebook, laisser une réaction, abonnez-vous pour rester actif avec chaque nouveauté, nous mettons toutes les nouvelles actualités dessus, restez parmis nous.</span></a>
+        <a > laisser un commentaire email<br><span>laisser un commentaire via notre email pour nous permettre d'ameliorer nos services ou nous encourager dans notre marche pour l'art urbaine qui doit être mis de l'avant.</span></a>
+    </div>
+   </footer>
+   <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

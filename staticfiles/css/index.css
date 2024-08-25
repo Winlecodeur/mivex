@@ -1,0 +1,572 @@
+header{
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 0 10px black;
+    z-index: 10;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+header .title{
+    margin-left: 1em;
+}
+.header-name{
+    color: rgb(85, 0, 103);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.title{
+    font-size: 1.2em;
+    color: black;
+    font-weight: 700;
+}
+.menu {
+    display: flex;
+}
+.menu li{
+    list-style: none;
+    margin-right: 1em;
+    font-size: 1em;
+}
+.menu li a {
+    text-decoration: none;
+    color: rgb(80, 79, 79);
+    position: relative;
+}
+.menu li a::before{
+    position: absolute;
+    content: "";
+    top: -5px;
+    left: 0;
+    background-color: red;
+    width: 0;
+    height: 2px;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.menu li a:hover::before{
+    width: 100%;
+    color: black;
+}
+.menu li a:hover{
+    color: black;
+    font-weight: 600;
+}
+.menu li a::after{
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(85, 0, 103);
+    width: 0;
+    height: 2px;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.menu li a:hover::after{
+    width: 100%;
+}
+.accueil{
+    position: relative;
+    margin-top: 1em;
+    padding: 40px;
+}
+.accueil-infos{
+    display: grid;
+    position: relative;
+    width: 500px;
+    margin-top: 10em;
+    margin-right: 1em;
+    margin-left: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.accueil-infos h1{
+    font-size: 3.4em;
+    line-height: 55px;
+}
+.accueil-p{
+    display: block;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    padding-top: 0;
+    margin-top: 0;
+    
+}
+.accueil-p-a {
+    margin-left: 3em;
+    margin-top: 1em;
+    text-decoration: none;
+    background-color: rgb(85, 0, 103);
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    padding: 10px 40px;
+    border-radius: 35px;
+}
+.accueil-p a:hover{
+    width: 150px;
+    letter-spacing: 3px;
+}
+.accueil-img img {
+    position: absolute;
+    padding-left: 0;
+    margin-left: 0;
+    top: 0;
+    padding-top: 0;
+    left: 550px;
+    width: 41.5em;
+    height: 34em;
+}
+.infos-h1{
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+    margin-top: 10em;
+}
+.item {
+    
+    opacity: 0;
+    transition: 
+    0.5s ease;
+}
+.item.visible{
+    opacity: 1;
+}
+.infos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 4em;
+    gap:30px;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+.visible{
+    opacity: 1;
+}
+.infos-propos{
+    width: 300px;
+    max-width: 300px;
+    height: 330px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    overflow: hidden;
+}
+.infos-propos img {
+    width: 100%;
+    border-radius: 10px;
+}
+.infos-propos span{
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(85, 0, 103);
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+.propos-h1{
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    font-family:'Times New Roman', Times, serif;
+    
+
+}
+.propos{
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    width: 100%;
+    place-items: center;
+}
+.propos.visible{
+    opacity: 1;
+}
+.propos-infos{
+    width: 300px;
+    height: 350px;
+    border-radius: 25px;
+    box-shadow: 0 0 8px black;
+}
+.propos-detail h4{
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+}
+.propos-detail{
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+.propos-detail small{
+    color: rgb(85, 0, 103);
+    font-size: 2em;
+    font-weight: 900;
+}
+.small{
+    padding-top: 0;
+    margin-top: 0;
+    margin-left: 250px;
+}
+.propos-img{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+}
+.propos-img img{
+    width: 100%;
+    height: 190px;
+    border-radius: 25px;
+}
+.propos-detail a {
+    padding: 10px 40px;
+    background-color: rgb(85, 0, 103);
+    color: white;
+    border-radius: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    margin-left:3em;
+    margin-top: 0.8em;
+}
+.propos-detail a:hover{
+    letter-spacing: 2px;
+}
+footer {
+    margin-top: 15em;
+    background-color: rgb(84, 29, 95);
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin-left: 0;
+    width: 100%;
+    height: 400px;
+    position:relative;
+    border-radius: 30px;
+}
+footer.visible{
+    opacity: 1;
+}
+footer .icone {
+    padding-top: 100px;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+}
+footer a {
+    margin-right: 1em;
+}
+footer a img {
+    width: 1.5em;
+    height: 1.5em;
+}
+footer .icone a img:hover {
+    width: 2.5em;
+    height: 2.5em;
+}
+#logo:hover{
+    width: 3em;
+    height: 
+    3em;
+}
+.footer-a {
+    padding: 
+    30px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-a a {
+    color: white;
+    text-decoration: none;
+    width: 200px;
+    font-weight: 700;
+}
+.footer-a a span {
+    font-weight: 200;
+    color: rgb(201, 201, 201);
+}
+#accueil2{
+    display: none;
+}
+.toggle{
+    display: none;
+}
+.btn{
+    display:none;
+}
+.success{
+    display: flex;
+    justify-content: center;
+    color: rgb(57, 156, 0);
+    list-style: none;
+    font-weight: 900;
+    padding-top: 2em;
+    font-size: 1.5em;
+}
+
+.success-div{
+    position: absolute;
+    padding-top: 2em;
+}
+.form {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    height: 300px;
+}
+.form label{
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+.form input{
+    border:1px solid rgb(85, 0, 103);
+    border-radius: 10px;
+    width: 380px;
+    height: 30px;
+}
+.form button:hover{
+    letter-spacing: 2px;
+}
+.form button{
+    margin-top: 1em;
+    border: none;
+    padding: 10px 120px;
+    background-color: rgb(85, 0, 103);
+    color: white;
+    border-radius: 15px;
+    
+}
+.form-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.form form {
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 2.5px rgb(85, 0, 103);
+    border-radius: 35px;
+    width: 500px;
+    height: 120px;
+    margin-top: 100px;
+    padding-top: 5em;
+}
+.form-h1{
+    display: flex;
+    justify-content: center;
+}
+.form h1{
+    position: absolute;
+    padding-top: 3em;
+}
+.equipe{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+.equipe h1{
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.equipe-div{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    place-items: center;
+    gap: 30px;
+    width: 900px;
+}
+.equipe-body{
+    background-color: rgb(247, 246, 246);
+}
+.equipe-img{
+    margin-bottom: 10em;
+    width: 310px;
+    height: 300px;
+    border-radius: 35px;
+}
+.equipe-img img{
+    width: 100%;
+    height: 380px;
+    border-radius: 35px;
+}
+@media(max-width:946px){
+    .equipe-div{
+        width: 100%;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .equipe h1{
+        padding-top: 1em;
+    }
+    .form form{
+        width: 400px;
+    }
+    .form input{
+        width: 300px;
+    }
+    .success{
+        font-size: 1em;
+    }
+    #propos-h1{
+        width:auto;
+    }
+    #infos-h1{
+        width:auto;
+    }
+    .btn{
+        position:absolute;
+        display:block;
+        position:fixed;
+        top:55%;
+    }
+
+    .btn img{
+        width:2em;
+        height:2em;
+        }
+    .accueil-img{
+        display: none;
+    }
+    #accueil2{
+        display: block;
+    }
+    .accueil-img{
+        position: relative;
+        width: auto;
+        padding: 0;
+        height: auto;
+        left: 0;
+
+    }
+    #accueil2 img{
+        margin-top: 7.5em;
+        width: 20em;
+        height: auto;
+        left: 0px;
+        padding-left: 0;
+        margin-left: 8em;
+        position: absolute;
+        border-radius: 0px;
+    }
+    .accueil{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(1,1fr);
+        padding: 1px;
+        width: auto;
+    }
+    .accueil-infos{
+        width: auto;
+        margin-left: 2em;
+        margin-top: 14.2em;
+    }
+    .infos{
+        grid-template-columns: repeat(1,1fr);
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+        place-items: center;
+    }
+    .infos-h1{
+        font-size: 1.2em;
+    }
+    .propos{
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+    }
+    .propos-h1{
+        margin-top: 10em;
+        font-size: 1.2em;
+    }
+    footer{
+        height: auto;
+    }
+    .footer-a a {
+        font-size: 0.9em;
+    }
+    footer a span {
+        font-size: 0.7em;
+    }
+    .menu{
+        display: none;
+    }
+    .toggle{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin-left: auto;
+        align-items: center;
+    }
+    .toggle::before{
+        content: "";
+        background-color: rgb(85, 0, 103);
+        box-shadow: 0 10px 0 rgb(85, 0, 103);
+        width: 30px;
+        height: 3px;
+        transform: translateY(-10px);
+        border-radius: 15px;
+        position: absolute;
+        transition: 0.5s;
+    }
+    .toggle.active::before{
+        box-shadow:  0 0 0 rgb(85, 0, 103);
+        transform: translateY(0) rotate(135deg);
+    }
+    .toggle::after{
+        position: absolute;
+        content: "";
+        background-color: rgb(85, 0, 103);
+        width: 25px;
+        height: 3px;
+        transform: translateY(10px);
+        border-radius: 15px;
+    }
+    .toggle.active::after{
+        transform: translateY(0) rotate(-135deg);
+    }
+    .menu.responsive{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        height: 200px;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        backdrop-filter: blur(15px);
+        top: 35%;
+    }
+     .menu.responsive li{
+        margin: 10px;
+    }
+    header {
+        align-items: normal;
+        
+    }
+    header span{
+        padding-top: 0.5em;
+    }
+}

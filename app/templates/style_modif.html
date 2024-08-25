@@ -1,0 +1,23 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inscription.css' %}">
+    <title>inscription</title>
+</head>
+<body style="    background-image: url('static/BackgroundEraser_20240816_135025459.png');
+background-repeat: no-repeat;
+background-size: 30em;">
+  <div class="medias">
+    <h1>AJOUTER UN STYLE</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form">
+            <label for="">nom</label>{{form.name}}
+        </div>
+        <button type="submit">ajouter</button>
+    </form>
+  </div>
+</body>
+</html>
