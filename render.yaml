@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: mivex
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn your_project_name.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mivex.settings
+      - key: DB_NAME
+        value: your_db_name
+      - key: DB_USER
+        value: your_db_user
+      - key: DB_PASSWORD
+        value: your_db_password
+      - key: DB_HOST
+        value: your_db_host
+      - key: DB_PORT
+        value: your_db_port
