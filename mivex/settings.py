@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-from decouple import config #type:ignore
+from decouple import config 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c4%=+i!z5&ohn0#*r#+#^(9yt7xw4v2_35=w%wu83x#l1m1+c6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [.onrender.cim]
 
 
 # Application definition
@@ -129,9 +129,9 @@ MEDIA_ROOT = os.path.join('media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST : 'smtp.sendgrid.net' #type:ignore
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST : 'smtp.gmail.com' #type:ignore
+EMAIL_HOST_USER = 'therryconsy@gmail.com'
+EMAIL_HOST_PASSWORD = 'therry2005'
 DEFAULT_FROM_EMAIL= 'therryconsu@gmail.com'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
