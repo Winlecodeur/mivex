@@ -121,6 +121,7 @@ def subscribe_search(request):
         return redirect('home')
 
 #ici je developpe une manière d'envoyer un message à tous les utlisateurs qui sont dans ma newsletter | here i created a way to send a message for our subscribers
+
 def send_messages(request):
     if request.user.is_superuser:
         if request.method == 'POST':
@@ -130,13 +131,19 @@ def send_messages(request):
                 message = form.cleaned_data['message']
                 subscribers = Subscriber.objects.all()
                 recipient_list = [subscriber.email for subscriber in subscribers]
-                send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list)
-                messages.success(request, 'la newsletter a été envoyée avec succès')
-                return redirect ('admin')
-        else : 
+                
+                try:
+                    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list)
+                    messages.success(request, 'La newsletter a été envoyée avec succès.')
+                except Exception as e:
+                    messages.error(request, f'Erreur lors de l\'envoi de la newsletter : {e}')
+                
+                return redirect('home')  # Redirige vers la page d'accueil ou une autre page appropriée
+        else:
             form = NewsletterEmailForm()
-        return render (request, 'admin.html',{'form':form})
-    else : 
+        
+        return render(request, 'admin.html', {'form': form})
+    else:
         return redirect('home')
 
 #ici je developpe 3 detail different affiche, decouverte et equipe
