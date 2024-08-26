@@ -11,7 +11,7 @@ background-repeat: no-repeat;
 background-size: 30em;">
   <div class="medias">
     <h1>S'INSCRIRE</h1>
-    <form method="post" action="{% url 'inscription' %}">
+    <form method="post" action="{% url 'inscription_modif' inscription.id %}">
         {% csrf_token %}
         <div class="form">
             <label for="">nom</label>{{form.name}}

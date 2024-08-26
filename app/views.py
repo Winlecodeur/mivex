@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 
 from .models import Inscription, Style, Subscriber
 from .forms import InscriptionForm, StyleForm, NewsletterForm, NewsletterEmailForm
 from django.contrib import messages

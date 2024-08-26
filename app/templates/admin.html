@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admins.css' %}">
     <title>admin</title>
 </head>
 <body>
@@ -33,7 +33,7 @@
                         <img src="{% static 'img/20173.png' %}">
                     </div>
                     <div class="div-bio">
-                 <a href="">       <h4>NEWSLETTER</h4>
+                 <a href="#news">       <h4>NEWSLETTER</h4>
                     <span>consulter la liste de personnes qui se sont abonnés à votre newsletter</span>
                </a>
                     </div>
@@ -43,7 +43,7 @@
                         <img src="{% static 'img/icons8-administrateur-94.png' %}">
                     </div>
                     <div class="div-bio">
-                  <a href="">
+                  <a href="{% url  'inscription' %}">
                     <h4>INSCRIPTION</h4>
                     <span>consulter la liste des personnes qui se sont inscrite à votre événement</span>
                
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="aside-news">
-                <div class="aside-news-infos">
+                <div class="aside-news-infos" id="news">
                     <h4>NEWSLETTER EMAIL <form method="get" class="search" action="{% url 'subscribe_search' %}">
                         <input name="q" value="{{query}}" placeholder="ex.enoch">
                         <button type="submit"><img src="{% static 'img/icons8-chercher-50 (2).png' %}"></button>

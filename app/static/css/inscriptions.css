@@ -43,4 +43,8 @@
 .medias form input{
     width: 250px;
 }
+.medias form{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+}
 }
