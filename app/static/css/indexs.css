@@ -500,7 +500,7 @@ footer .icone a img:hover {
         font-size: 1.2em;
     }
     footer{
-        width: auto;
+        width: 100%;
         height: auto;
     }
     .footer-a a {
