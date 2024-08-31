@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os 
+import environ  
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -123,13 +125,14 @@ STATICFILES = [os.path.join(BASE_DIR,'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join('media')
 
-
+env = environ.Env()
+environ.Env.read_env()
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST : 'smtp.sendgrid.net' #type:ignore
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL= 'therryconsu@gmail.com'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
