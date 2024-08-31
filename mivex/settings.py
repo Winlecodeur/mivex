@@ -131,7 +131,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST : 'smtp.sendgrid.net' #type:ignore
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = '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'
-DEFAULT_FROM_EMAIL= 'therryconsu@gmail.com'
+DEFAULT_FROM_EMAIL=  'therryconsu@gmail.com'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
