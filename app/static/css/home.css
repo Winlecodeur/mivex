@@ -500,8 +500,10 @@ footer .icone a img:hover {
         font-size: 1.2em;
     }
     footer{
-        width: 100%;
+        width: auto;
         height: auto;
+max-width:auto;
+overflow-wrap:break-word;
     }
     .footer-a a {
         font-size: 0.9em;
