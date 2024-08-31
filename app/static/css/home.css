@@ -506,11 +506,11 @@ max-width:auto;
 overflow-wrap:break-word;
     }
     .footer-a a {
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
     footer a span {
         width: auto;
-        font-size: 0.6em;
+        font-size: 0.5em;
     }
     .menu{
         display: none;
